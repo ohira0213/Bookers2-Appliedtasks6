@@ -21,8 +21,6 @@ class CreateActiveStorageTables < ActiveRecord::Migration[5.2]
       t.string     :name,     null: false
       t.references :record,   null: false, polymorphic: true, index: false, type: foreign_key_type
       t.references :blob,     null: false, type: foreign_key_type
-    end
-    add_index :active_storage_attachments, :name, unique: true
 
       t.datetime :created_at, null: false
 
