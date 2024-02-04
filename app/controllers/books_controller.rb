@@ -23,6 +23,7 @@ end
     @new_book=Book.new
     @book=Book.find(params[:id])
     @user=@book.user
+    @book_comment = BookComment.new
   end
 
   def edit
@@ -30,7 +31,7 @@ end
     if @book.user == current_user
     render :edit 
     else
-    redirect_to books_path
+    redirect_to book_path
     end
   end
 
